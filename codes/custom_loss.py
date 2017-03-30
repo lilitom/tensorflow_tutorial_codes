@@ -11,6 +11,7 @@ y_pred = tf.matmul(x_input, weight)
 # y_pred > weight 损失权重为 10
 # y_pred <= weight 损失权重为 1
 
+
 less_loss = 1.
 more_loss = 10.
 loss = tf.reduce_sum(tf.where(tf.greater(y_output, y_pred),
