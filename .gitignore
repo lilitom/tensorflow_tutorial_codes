@@ -2,4 +2,4 @@
 .gitignore
 .idea/
 /demo.py
-codes/.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
