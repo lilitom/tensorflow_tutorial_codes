@@ -9,4 +9,4 @@
 7. [Multi-Layer Perceptron识别手写数字](notebooks/7_MLP/multi_layer_perceptron.ipynb)
 8. [简单实现CNN](notebooks/8_simple_cnn/simple_cnn.ipynb)
 9. [深入了解CNN](notebooks/9_deep_cnn/deep_cnn.ipynb)
-10. [简单了解LSTM Add Two Numbers](notebooks/10_add_numbers_lstm/add_numbers.py)
+10. [MLP实现 Add Two Numbers](notebooks/10_add_numbers_mlp/add_numbers.py)

@@ -30,7 +30,7 @@ def invert(value, n_numbers, largets):
 n_examples = 100
 n_numbers = 2
 largest = 100
-n_epochs = 1000
+n_epochs = 100
 n_batch = 20
 
 # create LSTM
