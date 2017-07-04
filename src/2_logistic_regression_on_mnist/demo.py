@@ -22,12 +22,12 @@ train = optimizer.minimize(cross_entropy)
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 for i in range(2000):
-    batch_xs, batch_ys = mnist.train.next_batch(100)
+    batch_xs, batch_ys = mnist.train.next_batch(128)
     sess.run(train, feed_dict={x: batch_xs, y_: batch_ys})
 
     if (i + 1) % 50 == 0:
         loss = sess.run(cross_entropy, feed_dict={x: batch_xs, y_: batch_ys})
-        print('Iteration: {0}, currect loss: {1}'.format(i + 1, loss))
+        print('Epoch: {0}, currect loss: {1}'.format(i + 1, loss))
 
 correct_prediction = tf.equal(tf.argmax(y_, axis=1), tf.argmax(y, axis=1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, dtype=tf.float32))
@@ -35,5 +35,6 @@ model_acc = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.l
 
 # model accuracy: 0.921
 print('model accuracy: {0}'.format(model_acc))
+
 
 sess.close()
