@@ -1,4 +1,6 @@
 ## Tensorflow系列教程
 
-1. [The first tensorflow model](src/1_linear_regression/simple_linear_regression.py)
-2. [logistic regression on mnist](src/2_logistic_regression_on_mnist/demo.py)
+> 这是我的为我的博客 Tensorflow 系列教程准备的代码
+
+1. [The first tensorflow model](src/linear_regression/simple_linear_regression.py)
+2. [logistic regression on mnist](src/logistic_regression_on_mnist/logistic_regression_on_mnist.py)
