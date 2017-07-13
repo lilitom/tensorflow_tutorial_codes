@@ -68,8 +68,6 @@ def build_mode(images):
         print_activation(pool5)
 
 
-
-
 def main():
     pass
 

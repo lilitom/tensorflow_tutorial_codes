@@ -16,7 +16,7 @@ b = tf.Variable(tf.zeros(10), dtype=tf.float32)
 y = tf.nn.softmax(tf.matmul(x, W) + b)
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), axis=1))
 
-optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.5)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
 train = optimizer.minimize(cross_entropy)
 
 sess = tf.Session()
