@@ -58,6 +58,7 @@ loss = tf.square(tf.subtract(y_, y))
 train_op = tf.train.GradientDescentOptimizer(learning_rate=0.001).minimize(loss)
 
 with tf.Session() as sess:
+    tf.summary.FileWriter('./graphs', graph=sess.graph)
     tf.global_variables_initializer().run()
 
     for i in range(50):
@@ -76,3 +77,10 @@ with tf.Session() as sess:
 
         val_loss = np.mean(sess.run(loss, feed_dict={x: x_value, y_: y_value}))
         print('Run %d , loss %f' % (i, val_loss))
+
+    for b in range(0, len(test_x), test_size):
+        x_value = test_x[b: b + test_size]
+        y_value = test_y[b: b + test_size]
+        y_pred = sess.run(y, feed_dict={x: x_value})
+        for i in range(len(y_pred)):
+            print('y_value %s, y_pred %s' % (y_value[i], y_pred[i]))
