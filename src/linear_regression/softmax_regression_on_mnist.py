@@ -1,13 +1,14 @@
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 
-# 导入数据
+# 导入Tensorflow自带的MNISt数据
 mnist = input_data.read_data_sets('mnist_data/', one_hot=True)
 
 # print('training data:', mnist.train.images.shape, )
 # print('testing data', mnist.test.images.shape)
 # print('validation data', mnist.validation.images.shape)
 
+# 设计我们的网络模型
 x = tf.placeholder(dtype=tf.float32, shape=[None, 784])
 y_ = tf.placeholder(dtype=tf.float32, shape=[None, 10])
 
@@ -36,6 +37,6 @@ correct_prediction = tf.equal(tf.argmax(y_, axis=1), tf.argmax(y, axis=1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, dtype=tf.float32))
 model_acc = sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
 
-# model accuracy: 0.921
+# 模型正确率: 0.921
 print('model accuracy: {0}'.format(model_acc))
 sess.close()
